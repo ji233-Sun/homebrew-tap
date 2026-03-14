@@ -1,14 +1,26 @@
 class Be < Formula
   desc "Turn complex shell commands into simple tags"
   homepage "https://github.com/ji233-Sun/beaver"
-  url "https://github.com/ji233-Sun/beaver/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "353be88169748d41da47dd892ca155807f504017d2967d0829cb036a8a4d61f8"
+  version "0.1.0"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/ji233-Sun/beaver/releases/download/v0.1.0/be-aarch64-apple-darwin.tar.gz"
+      sha256 "08f4d07030dde389ba9c6b86f53ade3e2ed4acabff1c8d2ed24d15c8dfdb1b99"
+    else
+      url "https://github.com/ji233-Sun/beaver/releases/download/v0.1.0/be-x86_64-apple-darwin.tar.gz"
+      sha256 "2473366f1ca36f26ef93713913029bfc904c05eabf317d0583c829972c35b381"
+    end
+  end
+
+  on_linux do
+    url "https://github.com/ji233-Sun/beaver/releases/download/v0.1.0/be-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "c9ed0cefc5b9fe450c0689f1808e54d89619f0d9515692dfb91298e6c766564b"
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "be"
   end
 
   test do

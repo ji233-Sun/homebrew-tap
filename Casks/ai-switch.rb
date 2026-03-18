@@ -2,13 +2,13 @@ cask "ai-switch" do
   version "0.1.0"
 
   on_arm do
-    url "https://github.com/ji233-Sun/ai-switch/releases/download/v1.1.0/ai-switch_#{version}_aarch64.dmg"
-    sha256 "f1971acc24fe0b0fd8345721beb044fe7365be54225ff511db8d4fcf70fbb2bb"
+    url "https://github.com/ji233-Sun/ai-switch/releases/download/v1.2.0/ai-switch_#{version}_aarch64.dmg"
+    sha256 "bf496946fbc7b3e69ba9bff62a146b1afd507ea88e502aebcff0f5493625a4b3"
   end
 
   on_intel do
-    url "https://github.com/ji233-Sun/ai-switch/releases/download/v1.1.0/ai-switch_#{version}_x64.dmg"
-    sha256 "816ed7c609c5e9d862db9f9ed51040c2a493863cc26ff7a8b5cf6f465bbe86ad"
+    url "https://github.com/ji233-Sun/ai-switch/releases/download/v1.2.0/ai-switch_#{version}_x64.dmg"
+    sha256 "c517d3f868903b93371cd8463f67f4ab6eaa37c46f0e745909d9ef49d57aac57"
   end
 
   name "AI Switch"
